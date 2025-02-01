@@ -27,7 +27,7 @@
 
         public function all()
         {
-            return array_merge($this->queryParams, $this->inputData);
+            return array_merge($this->queryParams, $this->inputData, $this->customData);
         }
 
         public function input(string $key, $default = null)
