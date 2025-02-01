@@ -1,0 +1,23 @@
+{
+    "name": "lunaris/security",
+    "version": "0.0.1",
+    "description": "This is a security package for lunaris framework.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lunaris\\Security\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bhaswanth Chiruthanuru",
+            "email": "bhaswanth.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "defuse/php-encryption": "dev-master"
+    }
+}
