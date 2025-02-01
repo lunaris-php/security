@@ -12,8 +12,7 @@
         private static function key(): Key {
             if(self::$cachedKey === null) {
                 $root = dirname(getcwd());
-                echo $root . "<br/>";
-                $config = require $root . "/../app/config/app.php";
+                $config = require $root . "/app/config/app.php";
                 $keyAscii = $config["app_key"] ?? '';
 
                 if(empty($keyAscii)) {
