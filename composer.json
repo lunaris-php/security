@@ -1,6 +1,6 @@
 {
     "name": "lunaris/security",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "This is a security package for lunaris framework.",
     "type": "library",
     "license": "MIT",
