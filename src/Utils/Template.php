@@ -24,7 +24,7 @@
             $content = <<<PHP
             <?php
 
-                namespace Module\\{$moduleName}\\Requests
+                namespace Module\\{$moduleName}\\Requests;
 
                 use Lunaris\\Security\\Http\\Request;
                 
