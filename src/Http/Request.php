@@ -5,6 +5,7 @@
     abstract class Request
     {
         protected $inputData;
+        protected $jsonData;
         protected $queryParams;
         protected $headers;
         protected $files;
@@ -16,6 +17,7 @@
         {
             $this->inputData = $this->sanitize($_POST);
             $this->queryParams = $this->sanitize($_GET);
+            $this->jsonData = json_decode(file_get_contents('php://input'), true);
 
             $this->headers = getallheaders();
             $this->files = $_FILES;
@@ -27,12 +29,22 @@
 
         public function all()
         {
-            return array_merge($this->queryParams, $this->inputData, $this->customData);
+            return array_merge(
+                $this->queryParams, 
+                $this->inputData, 
+                $this->customData, 
+                $this->jsonData
+            );
         }
 
         public function input(string $key, $default = null)
         {
             return $this->inputData[$key] ?? $default;
+        }
+
+        public function json(string $key, $default = null)
+        {
+            return $this->jsonData[$key] ?? $default;
         }
 
         public function param(string $key, $default = null)
